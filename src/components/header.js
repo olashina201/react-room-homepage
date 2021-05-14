@@ -3,19 +3,21 @@ import '../static/style.css';
 import Logo from '../images/logo.svg';
 
 export default function Header() {
-    const toggle = () => {
-        let nav = document.querySelector(".nav");
-        let toggler = nav.querySelector(".toggler")
+    const [isOpen, setIsOpen] = useState(false);
+    const toggle = () => setIsOpen(!isOpen);
+    // const toggle = () => {
+    //     let nav = document.querySelector(".nav");
+    //     let toggler = nav.querySelector(".toggler")
 
-        toggler.addEventListener("click", () => {
-            nav.classList.toggle("active");
-        })
-    }
+    //     toggler.addEventListener("click", () => {
+    //         nav.classList.toggle("active");
+    //     })
+    // }
     return (
         <React.Fragment>
             <div className="header">
                 <nav className="navbar">
-                    <div className="nav" >
+                    <div className={isOpen ? 'nav active' : 'nav'} >
                         <div className="toggler" onClick={ toggle } ></div>
                         <a href="#" className="logo"> <img src={Logo} alt="logo" /> </a>
                         <ul className="list">
