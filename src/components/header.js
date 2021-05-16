@@ -5,14 +5,7 @@ import Logo from '../images/logo.svg';
 export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
-    // const toggle = () => {
-    //     let nav = document.querySelector(".nav");
-    //     let toggler = nav.querySelector(".toggler")
 
-    //     toggler.addEventListener("click", () => {
-    //         nav.classList.toggle("active");
-    //     })
-    // }
     return (
         <React.Fragment>
             <div className="header">
